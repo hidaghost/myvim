@@ -189,7 +189,10 @@ set laststatus=2
 
 
 """ YouCompleteMe
+""" cd ~/.vim/bundle/YouCompleteMe
+""" ./install (--clang-completer)
 Plugin 'Valloric/YouCompleteMe'
+nnoremap <Leader>g :YcmCompleter GoToDefinition<CR>
 
 
 """ All of the plugins must be added before here
