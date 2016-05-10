@@ -1,0 +1,19 @@
+# prerequisites:
+# (Ubuntu) sudo apt-get build-dep vim
+# (Mac OS) Command Line Tools for Xcode
+
+# get src
+git clone https://github.com/vim/vim.git
+
+# congfigure, compile and install
+cd vim/src
+./configure --enable-pythoninterp --with-features=huge --prefix=$HOME/opt/vim
+make && make install
+
+# make soft links to vim
+sudo ln -s $HOME/opt/vim/bin/vim /usr/bin/vim
+which vim
+vim --version
+
+# (Ubuntu)
+sudo apt-get install gtk2-engines-pixbuf
