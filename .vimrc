@@ -83,7 +83,7 @@ set smartcase
 
 
 """ ====================================
-""" Python IDE Setup
+""" Python IDE Setup (Pathogen Used)
 """ Mainly used plugins: 
 """ vim-powerline   https://github.com/Lokaltog/vim-powerline
 """ python-mode     https://github.com/klen/python-mode
@@ -101,7 +101,7 @@ set smartcase
 """ git clone git@github.com:tpope/vim-pathogen
 """ cp vim-pathogen/autoload/pathogen.vim ~/.vim/autoload/
 """ then you can install any plugin into a .vim/bundle/plugin-name/ folder
-call pathogen#infect()
+" call pathogen#infect()
 
 
 """ Settings for vim-powerline
@@ -113,10 +113,10 @@ call pathogen#infect()
 """ Settings for ctrlp
 """ cd ~/.vim/bundle
 """ git clone git@github.com:kien/ctrlp.vim.git
-let g:ctrlp_max_height = 30
-set wildignore+=*.pyc
-set wildignore+=*_build/*
-set wildignore+=*/coverage/*
+" let g:ctrlp_max_height = 30
+" set wildignore+=*.pyc
+" set wildignore+=*_build/*
+" set wildignore+=*/coverage/*
 
 
 """ Settings for python-mode
@@ -154,11 +154,11 @@ set wildignore+=*/coverage/*
 """ Python folding
 """ mkdir -p ~/.vim/ftplugin
 """ wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
-set nofoldenable
+" set nofoldenable
 
 
 """ ====================================
-""" Vundle Plugins
+""" Vundle Plugins for Python
 """ ===================================
 
 
@@ -174,13 +174,13 @@ Plugin 'Vundlevim/Vundle.vim'
 
 
 """ Settings for jedi-vim plugin
-Plugin 'davidhalter/jedi-vim'
-let g:jedi#auto_initialization = 1
-let g:jedi#auto_vim_configuration = 1
-let g:jedi#popup_on_dot = 1
-let g:jedi#auto_close_doc = 1
-let g:jedi#show_call_signatures = 1
-let g:jedi#smart_auto_mappings = 1
+" Plugin 'davidhalter/jedi-vim'
+" let g:jedi#auto_initialization = 1
+" let g:jedi#auto_vim_configuration = 1
+" let g:jedi#popup_on_dot = 1
+" let g:jedi#auto_close_doc = 1
+" let g:jedi#show_call_signatures = 1
+" let g:jedi#smart_auto_mappings = 1
 
 
 """ vim-airline, faster than powerline!
@@ -193,6 +193,13 @@ set laststatus=2
 """ ./install (--clang-completer)
 Plugin 'Valloric/YouCompleteMe'
 nnoremap <Leader>g :YcmCompleter GoToDefinition<CR>
+inoremap <Leader>; <C-x><C-o>
+let g:ycm_complete_in_comments = 1
+let g:ycm_complete_in_strings = 1
+" let g:ycm_confirm_extra_conf = 0
+set completeopt=longest,menu
+let g:ycm_min_num_of_chars_for_completion = 2
+
 
 
 """ All of the plugins must be added before here
