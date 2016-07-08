@@ -36,8 +36,8 @@ set bs=2      " make backspace behave like normal again
 
 
 """ Easier moving of code blocks
-vnoremap > >gv  
-vnoremap < <gv 
+" vnoremap > >gv  
+" vnoremap < <gv 
 
 
 """ Color scheme
@@ -53,9 +53,9 @@ syntax on
 
 """ Showing line numbers and length
 set number  " show line numbers
-set tw=119  " width of document (used by gd)
-set nowrap  " don't automatically wrap on load
-set fo-=t   " don't automatically wrap text when typing
+"set tw=119  " width of document (used by gd)
+"set nowrap  " don't automatically wrap on load
+"set fo-=t   " don't automatically wrap text when typing
 set colorcolumn=120
 highlight ColorColumn ctermbg=233
 
@@ -64,9 +64,9 @@ highlight ColorColumn ctermbg=233
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set shiftround
 set expandtab
 
+autocmd FileType ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 """ Make search case insensitive"
 set hlsearch
@@ -83,7 +83,7 @@ set smartcase
 
 
 """ ====================================
-""" Python IDE Setup (Pathogen Used)
+""" Python IDE Setup
 """ Mainly used plugins: 
 """ vim-powerline   https://github.com/Lokaltog/vim-powerline
 """ python-mode     https://github.com/klen/python-mode
@@ -93,7 +93,7 @@ set smartcase
 
 
 """ Use omni python complete
-" autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 
 """ Setup Pathogen to manage plugins
@@ -158,7 +158,7 @@ set smartcase
 
 
 """ ====================================
-""" Vundle Plugins for Python
+""" Vundle Plugins
 """ ===================================
 
 
@@ -174,13 +174,13 @@ Plugin 'Vundlevim/Vundle.vim'
 
 
 """ Settings for jedi-vim plugin
-" Plugin 'davidhalter/jedi-vim'
-" let g:jedi#auto_initialization = 1
-" let g:jedi#auto_vim_configuration = 1
-" let g:jedi#popup_on_dot = 1
-" let g:jedi#auto_close_doc = 1
-" let g:jedi#show_call_signatures = 1
-" let g:jedi#smart_auto_mappings = 1
+Plugin 'davidhalter/jedi-vim'
+let g:jedi#auto_initialization = 1
+let g:jedi#auto_vim_configuration = 1
+let g:jedi#popup_on_dot = 1
+let g:jedi#auto_close_doc = 1
+let g:jedi#show_call_signatures = 1
+let g:jedi#smart_auto_mappings = 1
 
 
 """ vim-airline, faster than powerline!
@@ -193,13 +193,6 @@ set laststatus=2
 """ ./install (--clang-completer)
 Plugin 'Valloric/YouCompleteMe'
 nnoremap <Leader>g :YcmCompleter GoToDefinition<CR>
-inoremap <Leader>; <C-x><C-o>
-let g:ycm_complete_in_comments = 1
-let g:ycm_complete_in_strings = 1
-" let g:ycm_confirm_extra_conf = 0
-set completeopt=longest,menu
-let g:ycm_min_num_of_chars_for_completion = 2
-
 
 
 """ All of the plugins must be added before here
